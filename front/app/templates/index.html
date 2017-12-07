@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Postcode API</title>
+        <link rel="stylesheet" href="/static/app.css?1">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">postcode-api</div>
+            <div class="sub_title">
+                Welcome to the postcode-api service.
+            </div>
+            <div class="paragraph sub">
+                Access to this service is simple. Make a request to the API
+                endpoint with a postcode (or partial) and it will return
+                details about the postcodes found.  Partial postcodes must be
+                a minimum of 4 characters and be a valid syntax (letters and
+                numbers only)
+                <div>
+                    <div class="codetitle">Example request string</div>
+                    <div class="code">/postcode/:postcodestring:</div>
+                </div>
+                <div>
+                    <div class="codetitle">Example response</div>
+                    <div class="code">
+                    <pre>{
+  "data": [
+    {
+      "address": {
+        "address1": "Harpenden",
+        "address2": "St. Albans",
+        "address3": "Hertfordshire",
+        "area": "Eastern",
+        "country": "England",
+        "postcode": "AL5 3HG"
+      },
+      "lat": 51.8288573766,
+      "lng": -0.380464939137
+    }
+  ],
+  "search": "AL53HG"
+}</pre></div>
+            </div>
+            <div class="sub_title">Development</div>
+            <div class="paragraph sub">
+                Mainly produced in Python running in a Docker container.
+                Data from OS Open Data, converted using OS Open Name to CSV.
+                <ul>
+                    <li><a href="https://github.com/ouchiko/os-open-names-csv-db">ouchiko/github: os-open-names-csv-db</a></li>
+                    <li><a href="https://github.com/ouchiko/postcode-api">ouchiko/github: postcoder-api</a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
